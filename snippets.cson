@@ -6,3 +6,25 @@
   'submit tag':
     prefix: 'vfs'
     body: '<input type="submit" value="Create ${1:Model!}">'
+
+  'csrf injection':
+    prefix: 'csrf'
+    body: '<%=csrf_token%>'
+
+'.source.ruby':
+  'csrf function':
+    prefix: 'csrf'
+    body: 'def csrf_token\n
+    "<input
+  type=hidden
+  name=\'authenticity_token\'
+  value=\'#{form_authenticity_token}\'>".html_safe\n
+  end'
+
+  'Password digest':
+    prefix: 'digest'
+    body: 'BCrypt::Password.create(password)'
+
+  'Password comparison':
+    prefix: 'compare password'
+    body: 'BCrypt::Password.new(self.password_digest).is_password?(password)'
