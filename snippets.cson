@@ -13,26 +13,27 @@
 
   'csrf injection':
     prefix: 'csrf'
-    body: '<%=csrf_token%>'
+    body: '<%= csrf_token %>'
 
   'input password':
     prefix: 'ip'
     body: '<label for="${1:password}">${2:Password:}</label>\n<input type="password" name="${3:user}[${4:password}]" id="${1:password}">'
 
 '.source.ruby':
+  #auth stuff
   'csrf function':
-    prefix: 'csrf'
-    body: 'def csrf_token\n
-    "<input
-  type=hidden
+  prefix: 'csrf'
+  body: 'def csrf_token\n
+  "<input
+  type=\'hidden\'
   name=\'authenticity_token\'
   value=\'#{form_authenticity_token}\'>".html_safe\n
   end'
 
   'Password digest':
-    prefix: 'digest'
-    body: 'BCrypt::Password.create(password)'
+  prefix: 'digest'
+  body: '${1:@password_digest} = BCrypt::Password.create(password)'
 
   'Password comparison':
-    prefix: 'compare password'
-    body: 'BCrypt::Password.new(self.password_digest).is_password?(password)'
+  prefix: 'cpwd'
+  body: 'BCrypt::Password.new(self.password_digest).is_password?(password)'
