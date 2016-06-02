@@ -19,6 +19,20 @@
     prefix: 'ip'
     body: '<label for="${1:password}">${2:Password:}</label>\n<input type="password" name="${3:user}[${4:password}]" id="${1:password}">'
 
+  'input radio':
+    prefix: 'ir'
+    body: '<input type="radio" \nname="${1:model_name}[${3:param_name}]" value="${4:value}" \nid="${2:input_id}">\n
+    <%= {1:model_name}.${3:param_name} == "${4:value}" ? "checked" : "" %>>
+    \n<label for="${2:input_id}">${5:label_name}</label>'
+
+    <input
+    type="radio"
+    name="cat[sex]"
+    value="M"
+    id="cat_sex_male"
+    <%= cat.sex == "M" ? "checked" : "" %>>
+  <label for="cat_sex_male">Male</label>
+
 '.source.ruby':
   #auth stuff
   'csrf function':
