@@ -1,0 +1,8 @@
+'.text.html':
+  'view form':
+    prefix: 'vf'
+    body: '<form action="<%= ${1:model_url} %>" method="${2:get}">\n</form>'
+
+  'submit tag':
+    prefix: 'vfs'
+    body: '<input type="submit" value="Create ${1:Model!}">'
