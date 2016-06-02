@@ -7,6 +7,10 @@
     prefix: 'vfs'
     body: '<input type="submit" value="Create ${1:Model!}">'
 
+  'input text':
+    prefix: 'it'
+    body: '<label for="${1:input_id}">${2:label_name}</label>\n<input type="text" name="${3:model_name}[${4:param_name}]" value="<%= @${5:model_name}.${6:attr_name} %>" id="${1:input_id}">'
+
   'csrf injection':
     prefix: 'csrf'
     body: '<%=csrf_token%>'
