@@ -26,6 +26,12 @@
     \n  <%= ${1:model_name}.${2:param_name} == "${3:value}" ? "checked" : "" %>>
     \n<label for="${4:input_id}">${5:label_name}</label>'
 
+  'input dropdown':
+    prefix: 'drp'
+    body: '<label for="${1:input_id}">${2:LabelName}</label>
+    \n<select \n  name="${3:model_name}[${4:param_name}]" \n  id="${1:input_id}">
+    \n</select>'
+
 '.source.ruby':
   #auth stuff
   'csrf function':
