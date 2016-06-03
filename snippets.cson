@@ -29,8 +29,8 @@
 '.source.ruby':
   #auth stuff
   'csrf function':
-  prefix: 'csrf'
-  body: 'def csrf_token\n
+    prefix: 'csrf'
+    body: 'def csrf_token\n
   "<input
   type=\'hidden\'
   name=\'authenticity_token\'
@@ -38,9 +38,25 @@
   end'
 
   'Password digest':
-  prefix: 'digest'
-  body: '${1:@password_digest} = BCrypt::Password.create(password)'
+    prefix: 'digest'
+    body: 'self.${1:password_digest} = BCrypt::Password.create(password)'
 
   'Password comparison':
-  prefix: 'cpwd'
-  body: 'BCrypt::Password.new(self.password_digest).is_password?(password)'
+    prefix: 'cpwd'
+    body: 'BCrypt::Password.new(self.password_digest).is_password?(password)'
+
+  'flash.now error':
+    prefix: 'fne'
+    body: 'flash.now[:errors] =  @${1:model_name}.errors.full_message'
+
+  'flash error':
+    prefix: 'fe'
+    body: 'flash[:errors] = @${1:model_name}.errors.full_message'
+
+  'flash generic':
+    prefix: 'fg'
+    body: 'flash[:${1:param_name}] = @${2:model_name}.${3:flash_type}'
+
+  'flash.now generic':
+    prefix: 'fng'
+    body: 'flash.now[:${1:param_name}] = @${2:model_name}.${3:flash_type}'
