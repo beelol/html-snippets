@@ -34,11 +34,11 @@
 
   'patch input':
     prefix: 'patch'
-    body: '<input type="hidden" name="_method" value = "patch" />'
+    body: '<input type="hidden" name="_method" value = "patch"/>'
 
-  'session token':
-    prefix: 'token'
-    body: 'SecureRandom.urlsafe_base64(16)'
+  'render partial':
+    prefix: 'rnp'
+    body: '<%= render "$1" %>'
 
 '.source.ruby':
   #auth stuff
@@ -74,3 +74,7 @@
   'flash.now generic':
     prefix: 'fng'
     body: 'flash.now[:${1:param_name}] = @${2:model_name}.${3:flash_type}'
+
+  'session token':
+    prefix: 'token'
+    body: 'SecureRandom.urlsafe_base64(16)'
