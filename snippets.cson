@@ -151,6 +151,10 @@
     body: 'def ${1:model_name}_params\n  params.require(:${1:model_name}).permit(:${2:first_param_name})
     \nend'
 
+  'redirect to view':
+      prefix: 'rdt'
+      body: 'redirect_to ${1:models}_url'
+
   #'controller params':
     #prefix: 'cp'
     #body: '''def @${1:myNAME}_params
