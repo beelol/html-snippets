@@ -79,11 +79,6 @@
     prefix: 'token'
     body: 'SecureRandom.urlsafe_base64(16)'
 
-  'params function':
-    prefix: 'prm'
-    body: 'def user_params\n  params.require(:${1:model_name}).permit(:${2:first_param_name})
-    \nend'
-
   'controller create':
     prefix: 'cc'
     body: '''def create
@@ -150,6 +145,11 @@
                redirect_to @${1:myNAME}s_url
              end
              $3'''
+
+  'params function':
+    prefix: 'prm'
+    body: 'def ${1:model_name}_params\n  params.require(:${1:model_name}).permit(:${2:first_param_name})
+    \nend'
 
   #'controller params':
     #prefix: 'cp'
