@@ -327,16 +327,16 @@ This code is typically used in the ApplicationController of your Rails Project.
 
 **Controller Parameters**
 
-  **prefix:** 'cp'
+  **prefix:** 'prm'
 
-  Inserts the controller's strong parameter method.
+  Inserts the controller's strong parameter method. Keep in mind that you won't have to type colons to represent symbols as this will happen automatically.
 
   **Tab Order**
-  1. Changes the param name.
-  Default: "myNAME"
+  1. Changes the name of the model in the function header and require function.
+  Default: "model_name"
 
   2. Tabs to the permit parameters.
-  Default: N/A
+  Default: :"first_param_name"
 
   3. Exits the method.
   Default: N/A
