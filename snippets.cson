@@ -151,9 +151,9 @@
              end
              $3'''
 
-  'controller params':
-    prefix: 'cp'
-    body: '''def @${1:myNAME}_params
-               params.require(:@${1:myNAME}).permit($2)
-             end
-             $3'''
+  #'controller params':
+    #prefix: 'cp'
+    #body: '''def @${1:myNAME}_params
+               #params.require(:@${1:myNAME}).permit($2)
+             #end
+             #$3'''
