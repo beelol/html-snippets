@@ -311,6 +311,7 @@ This code is typically used in the ApplicationController of your Rails Project.
   **prefixes:** 'cn', 'cc', 'ci', 'cs', 'ce', 'cu', 'cd'
 
   Each of these seven snippets insert code for the corresponding controller action.
+  These methods WILL require fine-tuning to work exactly as needed.
 
   **Tab Order**
   1. Changes the ivar name, as well the redirect url and param names.
