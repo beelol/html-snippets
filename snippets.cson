@@ -78,3 +78,8 @@
   'session token':
     prefix: 'token'
     body: 'SecureRandom.urlsafe_base64(16)'
+    
+  'params function':
+    prefix: 'prm'
+    body: 'def user_params\n  params.require(:${1:model_name}).permit(:${2:first_param_name})
+    \nend'
