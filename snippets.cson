@@ -61,11 +61,11 @@
 
   'flash.now error':
     prefix: 'fne'
-    body: 'flash.now[:errors] =  @${1:model_name}.errors.full_message'
+    body: 'flash.now[:errors] =  @${1:model_name}.errors.full_messages'
 
   'flash error':
     prefix: 'fe'
-    body: 'flash[:errors] = @${1:model_name}.errors.full_message'
+    body: 'flash[:errors] = @${1:model_name}.errors.full_messages'
 
   'flash generic':
     prefix: 'fg'
