@@ -303,3 +303,40 @@ This code is typically used in the ApplicationController of your Rails Project.
 
   3. Changes the flash type or message to store in the flash.
   Default: flash_type
+
+---
+
+**Controller Actions: new, create, index, show, edit, update, destroy**
+
+  **prefixes:** 'cn', 'cc', 'ci', 'cs', 'ce', 'cu', 'cd'
+
+  Each of these seven snippets insert code for the corresponding controller action.
+  These methods WILL require fine-tuning to work exactly as needed.
+
+  **Tab Order**
+  1. Changes the ivar name, as well the redirect url and param names.
+  Default: "myNAME"
+
+  2. Changes the class name.
+  Default: "myCLASS"
+
+  3. Exits the method.
+  Default: N/A
+
+---
+
+**Controller Parameters**
+
+  **prefix:** 'cp'
+
+  Inserts the controller's strong parameter method.
+
+  **Tab Order**
+  1. Changes the param name.
+  Default: "myNAME"
+
+  2. Tabs to the permit parameters.
+  Default: N/A
+
+  3. Exits the method.
+  Default: N/A

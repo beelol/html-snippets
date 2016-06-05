@@ -78,8 +78,82 @@
   'session token':
     prefix: 'token'
     body: 'SecureRandom.urlsafe_base64(16)'
-    
+
   'params function':
     prefix: 'prm'
     body: 'def user_params\n  params.require(:${1:model_name}).permit(:${2:first_param_name})
     \nend'
+
+  'controller create':
+    prefix: 'cc'
+    body: '''def create
+               @${1:myNAME} = ${2:myCLASS}.new(${1:myNAME}_params)
+               if @${1:myNAME}.save
+                 redirect_to @${1:myNAME}_url(@${1:myNAME})
+               else
+                 flash[:errors] = @${1:myNAME}.errors.full_messages
+                 render :new
+               end
+             end
+             $3'''
+
+  'controller new':
+    prefix: 'cn'
+    body: '''def new
+               @${1:myNAME} = ${2:myCLASS}.new
+               render :new
+             end
+             $3'''
+
+  'controller index':
+    prefix: 'ci'
+    body: '''def index
+               @${1:myNAME}s = ${2:myCLASS}.all
+               render :index
+             end
+             $3'''
+
+   'controller show':
+     prefix: 'cs'
+     body: '''def show
+                @${1:myNAME} = ${2:myCLASS}.find(params[:id])
+                render :show
+              end
+              $3'''
+
+  'controller edit':
+    prefix: 'ce'
+    body: '''def edit
+               @${1:myNAME} = ${2:myCLASS}.find(params[:id])
+               render :edit
+             end
+             $3'''
+
+  'controller update':
+    prefix: 'cu'
+    body: '''def update
+               @${1:myNAME} = ${2:myCLASS}.find(params[:id])
+               if @${1:myNAME}.update_attributes(${1:myNAME}_params)
+                 redirect_to @${1:myNAME}_url(@${1:myNAME})
+               else
+                 flash[:errors] = @${1:myNAME}.errors.full_messages
+                 render :edit
+               end
+             end
+             $3'''
+
+  'controller destroy':
+    prefix: 'cd'
+    body: '''def destroy
+               @${1:myNAME} = ${2:myCLASS}.find(params[:id])
+               @${1:myNAME}.destroy
+               redirect_to @${1:myNAME}s_url
+             end
+             $3'''
+
+  'controller params':
+    prefix: 'cp'
+    body: '''def @${1:myNAME}_params
+               params.require(:@${1:myNAME}).permit($2)
+             end
+             $3'''
