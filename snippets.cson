@@ -6,6 +6,25 @@
   'submit tag':
     prefix: 'vfs'
     body: '<input type="submit" value="Create ${1:Model!}">'
+    
+  'view form new':
+  prefix: 'vfn'
+  body: '<form action="<%= ${1:model_url} %>" method="${2:post}">
+  \n
+  \n  $4
+  \n
+  \n  <input type="submit" value="Create ${3:Model!}">
+  \n</form>'
+
+  'view form update':
+    prefix: 'vfu'
+    body: '<form action="<%= ${1:model_url} %>" method="${2:post}">
+    \n  <input type="hidden" name="_method" value = "patch"/>
+    \n
+    \n  $4
+    \n
+    \n  <input type="submit" value="Edit ${3:Model!}">
+    \n</form>'
 
   'input text':
     prefix: 'it'
@@ -154,10 +173,3 @@
   'redirect to view':
       prefix: 'rdt'
       body: 'redirect_to ${1:models}_url'
-
-  #'controller params':
-    #prefix: 'cp'
-    #body: '''def @${1:myNAME}_params
-               #params.require(:@${1:myNAME}).permit($2)
-             #end
-             #$3'''
