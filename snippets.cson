@@ -58,6 +58,10 @@
   'render partial':
     prefix: 'rnp'
     body: '<%= render "$1" %>'
+    
+  'error function':
+    prefix: 'error'
+    body: '<%= flash[:errors].join("<br>").html_safe if flash[:errors] %>'
 
 '.source.ruby':
   #auth stuff
