@@ -8,13 +8,13 @@
     body: '<input type="submit" value="Create ${1:Model!}">'
     
   'view form new':
-  prefix: 'vfn'
-  body: '<form action="<%= ${1:model_url} %>" method="${2:post}">
-  \n
-  \n  $4
-  \n
-  \n  <input type="submit" value="Create ${3:Model!}">
-  \n</form>'
+    prefix: 'vfn'
+    body: '<form action="<%= ${1:model_url} %>" method="${2:post}">
+    \n
+    \n  $4
+    \n
+    \n  <input type="submit" value="Create ${3:Model!}">
+    \n</form>'
 
   'view form update':
     prefix: 'vfu'
